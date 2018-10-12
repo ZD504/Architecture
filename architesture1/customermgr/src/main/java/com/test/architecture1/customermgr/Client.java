@@ -28,9 +28,12 @@ public class Client {
 		cm.setTrueName("张三");
 		cm.setRegisterTime("2018-05-22");
 		cm.setPwd("c1");
-		tClient.dao.create(cm);
+//		tClient.dao.create(cm);
 		
-		List<CustomerModel> list = tClient.dao.getByCondition(new CustomerQueryModel());
+		CustomerQueryModel cqm = new CustomerQueryModel();
+		cqm.getPage().setPage(2);
+		
+		List<CustomerModel> list = tClient.dao.getByConditionPage(cqm);
 		System.out.println("List=" + list);
 	}
 }

@@ -8,10 +8,11 @@
 		<typeAlias type="com.test.architecture1.customermgr.vo.CustomerQueryModel" alias="CQM"/>
 	</typeAliases>
       
-<!--   	<plugins>
-		<plugin interceptor="com.test.pageutil.PagePlugin">
+   	<plugins>
+		<plugin interceptor="com.test.pageutils.PagePlugin">
 			<property name="dialect" value="mysql"/>
 			<property name="pageSqlId" value=".*Page.*"/>
 		</plugin>
-	</plugins> -->   
+		
+	</plugins>  
 </configuration>
