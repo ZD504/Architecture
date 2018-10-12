@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.test</groupId>
+    <artifactId>architesture1</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <groupId>com.test</groupId>
+  <artifactId>cartmgr</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>cartmgr Maven Webapp</name>
+  <url>http://test.com</url>
+  <dependencies>
+  
+
+  
+
+  </dependencies>
+  <build>
+    <finalName>cartmgr</finalName>
+    <plugins>
+		<plugin>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-maven-plugin</artifactId>
+			<version>9.4.5.v20170502</version>
+			<configuration>
+				<scanIntervalSeconds>10</scanIntervalSeconds>
+				<httpConnector>
+					<port>9080</port>
+				</httpConnector>
+				<webApp>
+					<contextPath>/cart</contextPath>
+				</webApp>
+			</configuration>
+		</plugin>
+    </plugins>
+  </build>
+</project>

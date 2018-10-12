@@ -1,0 +1,1 @@
+alert("Goods f\g ccccc.js");
