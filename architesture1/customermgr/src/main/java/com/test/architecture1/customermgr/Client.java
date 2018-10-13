@@ -1,7 +1,5 @@
 package com.test.architecture1.customermgr;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,15 +7,22 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
-import com.test.architecture1.customermgr.dao.ICustomerDao;
+import com.test.architecture1.customermgr.service.ICustomerService;
 import com.test.architecture1.customermgr.vo.CustomerModel;
 import com.test.architecture1.customermgr.vo.CustomerQueryModel;
+import com.test.pageutils.PageBean;
 
 @Service
 public class Client {
 
 	@Autowired
-	private ICustomerDao dao = null;
+//	private ICustomerDao dao = null;
+	private ICustomerService s = null;
+	
+	public ICustomerService getS() {
+		return s;
+	}
+	
 	public static void main(String[] args) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		Client tClient = (Client) ctx.getBean("client"); //此处要小写client
@@ -31,9 +36,14 @@ public class Client {
 //		tClient.dao.create(cm);
 		
 		CustomerQueryModel cqm = new CustomerQueryModel();
-		cqm.getPage().setPage(2);
+		cqm.getPage().setPage(1);
 		
-		List<CustomerModel> list = tClient.dao.getByConditionPage(cqm);
-		System.out.println("List=" + list);
+		
+//		List<CustomerModel> list = tClient.dao.getByConditionPage(cqm);
+//		PageBean<CustomerModel> p = tClient.s.getByConditionPage(cqm);
+		PageBean<CustomerModel> p = tClient.getS().getByConditionPage(cqm);
+		System.out.println("page==" + cqm.getPage());
+//		System.out.println("List=" + list);
+		System.out.println("CM=" + tClient.toString());
 	}
 }

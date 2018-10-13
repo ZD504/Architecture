@@ -59,10 +59,10 @@ public class PagePlugin implements Interceptor {
 				BoundSql countBS = new BoundSql(mappedStatement.getConfiguration(), countSql,
 						boundSql.getParameterMappings(), parameterObject);
  
-				Field metaParamsField = ReflectUtil.getFieldByFieldName(boundSql, "metaParameters");
+				Field metaParamsField = ReflectHelper.getFieldByFieldName(boundSql, "metaParameters");
 				if (metaParamsField != null) {
-					MetaObject mo = (MetaObject) ReflectUtil.getValueByFieldName(boundSql, "metaParameters");
-					ReflectUtil.setValueByFieldName(countBS, "metaParameters", mo);
+					MetaObject mo = (MetaObject) ReflectHelper.getValueByFieldName(boundSql, "metaParameters");
+					ReflectHelper.setValueByFieldName(countBS, "metaParameters", mo);
 				}
 				setParameters(countStmt, mappedStatement, countBS, parameterObject);
 				ResultSet rs = countStmt.executeQuery();
@@ -239,7 +239,7 @@ public class PagePlugin implements Interceptor {
  
 		return sortSql.toString();
 	}
- 
+ /*
 	private static class ReflectHelper {
 		public static Field getFieldByFieldName(Object obj, String fieldName) {
 			for (Class superClass = obj.getClass(); superClass != Object.class;) {
@@ -270,7 +270,13 @@ public class PagePlugin implements Interceptor {
  
 		public static void setValueByFieldName(Object obj, String fieldName, Object value)
 				throws SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
-			Field field = obj.getClass().getDeclaredField(fieldName);
+			Field field = null;
+			try {
+				obj.getClass().getDeclaredField(fieldName);
+			} catch (Exception err) {
+				return;
+			}
+			
 			if (field.isAccessible()) {
 				field.set(obj, value);
 			} else {
@@ -280,5 +286,6 @@ public class PagePlugin implements Interceptor {
 			}
 		}
 	}
+	*/
 }
 

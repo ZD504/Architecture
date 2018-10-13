@@ -1,19 +1,15 @@
 package com.test.architecture1.customermgr.vo;
 
-public class CustomerModel {
-	private Integer uuid;
+import com.test.architecture1.common.vo.BaseModel;
+
+public class CustomerModel extends BaseModel{
 	private String  customerId;
 	private String 	pwd;
 	private String	showName;
 	private String	trueName;
 	private String	registerTime;
 	
-	public Integer getUuid() {
-		return uuid;
-	}
-	public void setUuid(Integer uuid) {
-		this.uuid = uuid;
-	}
+
 	public String getCustomerId() {
 		return customerId;
 	}
@@ -46,32 +42,10 @@ public class CustomerModel {
 	}
 	@Override
 	public String toString() {
-		return "CustomerModel [uuid=" + uuid + ", customerId=" + customerId + ", pwd=" + pwd + ", showName=" + showName
+		return "CustomerModel [uuid=" + getUuid() + ", customerId=" + customerId + ", pwd=" + pwd + ", showName=" + showName
 				+ ", trueName=" + trueName + ", registerTime=" + registerTime + "]";
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((uuid == null) ? 0 : uuid.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		CustomerModel other = (CustomerModel) obj;
-		if (uuid == null) {
-			if (other.uuid != null)
-				return false;
-		} else if (!uuid.equals(other.uuid))
-			return false;
-		return true;
-	}
+
 	
 	
 	

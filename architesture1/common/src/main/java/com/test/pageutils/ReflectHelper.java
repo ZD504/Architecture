@@ -2,7 +2,7 @@ package com.test.pageutils;
 
 import java.lang.reflect.Field;
 
-public class ReflectUtil
+public class ReflectHelper
 {
   public static Field getFieldByFieldName(Object obj, String fieldName)
   {
