@@ -10,7 +10,8 @@ public final class PageBean<T> implements Serializable {
 	private int pageSize = 2;
 	  private long totalCount;
 	  private int totalPage;
-	  private int page = 1;
+	  private int nowPage = 1;			//The current page or nowPage
+	  private int oldNowPage = 0;
 	  private String sortFields;
 	  private String order;
 	  private Object parameter;
@@ -25,7 +26,7 @@ public final class PageBean<T> implements Serializable {
 	    } else {
 	      this.pageSize = pageSize;
 	    }
-	    this.page = 1;
+	    this.nowPage = 1;
 	  }
 	  
 	  public int getPageSize()
@@ -51,17 +52,17 @@ public final class PageBean<T> implements Serializable {
 	  
 	  public int getPage()
 	  {
-	    return this.page <= 0 ? 1 : this.page;
+	    return this.nowPage <= 0 ? 1 : this.nowPage;
 	  }
 	  
 	  public void setPage(int page)
 	  {
 	    if (page < 1)
 	    {
-	      this.page = 1;
+	      this.nowPage = 1;
 	      return;
 	    }
-	    this.page = page;
+	    this.nowPage = page;
 	  }
 	  
 	  public String getOrder()
@@ -107,11 +108,21 @@ public final class PageBean<T> implements Serializable {
 	  public String toString()
 	  {
 	    return 
-	      "pageSize:" + this.pageSize + ",totalCount:" + this.totalCount + ",totalPage:" + this.totalPage + ",page:" + this.page + ",sortFields:" + this.sortFields + ",order:" + this.order;
+	      "pageSize:" + this.pageSize + ",totalCount:" + this.totalCount + ",totalPage:" + this.totalPage + ",page:" + this.nowPage + ",sortFields:" + this.sortFields + ",order:" + this.order;
 	  }
 	  
 	  public void setPageSize(int pageSize)
 	  {
 	    this.pageSize = pageSize;
 	  }
+
+	public int getOldNowPage() {
+		return oldNowPage;
+	}
+
+	public void setOldNowPage(int oldNowPage) {
+		this.oldNowPage = oldNowPage;
+	}
+	  
+	  
 	}

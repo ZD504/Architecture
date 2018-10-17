@@ -17,8 +17,8 @@ public class BaseService<M, QM extends BaseModel> implements IBaseService<M, QM>
 		dao.create(cm);
 	}
 
-	public void updae(M cm) {
-		dao.updae(cm);
+	public void update(M cm) {
+		dao.update(cm);
 	}
 
 	public void delete(int uuid) {

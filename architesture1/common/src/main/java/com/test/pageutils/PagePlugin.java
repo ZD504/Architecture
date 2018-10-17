@@ -54,6 +54,8 @@ public class PagePlugin implements Interceptor {
 				}
 				Connection connection = (Connection) ivk.getArgs()[0];
 				String sql = boundSql.getSql();
+				System.out.println("*****************");
+				System.out.println(sql);
 				String countSql = "select count(0) from (" + sql + ") tt ";
 				PreparedStatement countStmt = connection.prepareStatement(countSql);
 				BoundSql countBS = new BoundSql(mappedStatement.getConfiguration(), countSql,

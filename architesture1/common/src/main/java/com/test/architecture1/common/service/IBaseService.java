@@ -7,7 +7,7 @@ import com.test.pageutils.PageBean;
 
 public interface IBaseService<M,QM extends BaseModel> {
 	public void create(M cm);
-	public void updae(M cm);
+	public void update(M cm);
 	public void delete(int uuid);
 	
 	public M getByUuid(int uuid);

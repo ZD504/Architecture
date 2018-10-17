@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
 <body>
-<h2>Hello World! Customermgr</h2>
-<%@page import="com.test.architecture1.customermgr.Customer1" %>
-<%
-	System.out.println("Now in customermgr c1.jsp");
-	new Customer1().c1();
-%>
+<h1>Hello, Customer Mgr</h1>
 </body>
 </html>

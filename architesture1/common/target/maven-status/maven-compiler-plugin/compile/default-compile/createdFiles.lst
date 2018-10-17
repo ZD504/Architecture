@@ -1,1 +1,10 @@
+com\test\pageutils\PageBean.class
+com\test\architecture1\common\service\BaseService.class
+com\test\utils\DateFormatHelper.class
+com\test\architecture1\common\vo\BaseModel.class
+com\test\pageutils\PagePlugin.class
 com\test\architecture1\common\Base1.class
+com\test\pageutils\ReflectHelper.class
+com\test\utils\JsonHelper.class
+com\test\architecture1\common\service\IBaseService.class
+com\test\architecture1\common\dao\BaseDAO.class
