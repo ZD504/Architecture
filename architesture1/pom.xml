@@ -24,6 +24,7 @@
     <module>cartmgr</module>
     <module>ordermgr</module>
     <module>storemgr</module>
+    <module>front</module>
   </modules>
 
   <dependencies>
@@ -106,14 +107,15 @@
     
     <!-- Log -->
     <dependency>
-    	<groupId>org.slf4j</groupId>
-    	<artifactId>slf4j-api</artifactId>
-    	<version>1.7.5</version>
-    </dependency>
-    <dependency>
     	<groupId>ch.qos.logback</groupId>
     	<artifactId>logback-classic</artifactId>
     	<version>1.0.13</version>
+    	<exclusions>
+    		<exclusion>
+    			<groupId>org.slf4j</groupId>
+    			<artifactId>slf4j-api</artifactId>
+    		</exclusion>
+    	</exclusions>
     </dependency>
      
     <!-- MySQL -->   
@@ -156,21 +158,33 @@
 	<dependency>
 		<groupId>com.fasterxml.jackson.core</groupId>
 		<artifactId>jackson-core</artifactId>
-		<version>2.9.1</version>
+		<version>2.9.5</version>
 	</dependency>
 	<dependency>
 		<groupId>com.fasterxml.jackson.core</groupId>
 		<artifactId>jackson-annotations</artifactId>
-		<version>2.9.1</version>
+		<version>2.9.5</version>
 	</dependency>
 	<dependency>
 		<groupId>com.fasterxml.jackson.core</groupId>
 		<artifactId>jackson-databind</artifactId>
-		<version>2.9.1</version>
+		<version>2.9.5</version>
 		<exclusions>
 			<exclusion>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-annotations</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	
+	<dependency>
+		<groupId>net.sf.ehcache</groupId>
+		<artifactId>ehcache</artifactId>
+		<version>2.10.0</version>
+		<exclusions>
+			<exclusion>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
 			</exclusion>
 		</exclusions>
 	</dependency>

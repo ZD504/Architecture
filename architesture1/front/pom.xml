@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.test</groupId>
+    <artifactId>architesture1</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.test</groupId>
+  <artifactId>front</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <name>front Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+  
+    <dependency>
+  	  	<groupId>com.test</groupId>
+  		<artifactId>customermgr</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  
+  	<dependency>
+	        <groupId>org.apache.shiro</groupId>
+	        <artifactId>shiro-core</artifactId>
+	        <version>1.2.6</version>
+	    </dependency>
+	    <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-aspectj</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+		<dependency>
+		  	<groupId>org.apache.shiro</groupId>
+		  	<artifactId>shiro-spring</artifactId>
+		  	<version>1.2.6</version>
+		</dependency>
+		
+
+
+  </dependencies>
+  <build>
+    <finalName>front</finalName>
+    
+        <plugins>
+		<plugin>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-maven-plugin</artifactId>
+			<version>9.4.5.v20170502</version>
+			<configuration>
+				<scanIntervalSeconds>10</scanIntervalSeconds>
+				<httpConnector>
+					<port>9088</port>
+				</httpConnector>
+				<webApp>
+					<contextPath>/</contextPath>
+				</webApp>
+			</configuration>
+		</plugin>
+    </plugins>
+  </build>
+</project>

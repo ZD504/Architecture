@@ -21,4 +21,8 @@ public class CustomerService extends BaseService<CustomerModel, CustomerQueryMod
 		this.dao = dao;
 		super.setDAO(dao);
 	}
+	public CustomerModel getByCustomerId(String customerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

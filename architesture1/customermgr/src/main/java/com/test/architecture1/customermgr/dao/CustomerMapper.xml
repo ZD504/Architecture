@@ -32,7 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test='showName!=null  and showName!=""'>
 				and showName=#{showName}
 			</if>
-			<if test='trueName!=null  &amp;&amp; trueName!=""'>
+			<if test='trueName!=null  and trueName!=""'>
 				and trueName=#{trueName}
 			</if>
 		</where>
